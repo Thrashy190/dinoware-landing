@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+import logo from "@/assets/dinoware-logo.svg";
+---
+
+<header class="bg-primary text-white font-medium py-5 fixed w-full z-10">
+  <div class="flex flex-row justify-around">
+    <div class="flex flex-row gap-5">
+      <Image
+        src={logo}
+        alt="Imagen de camion para pagina principal"
+        class="w-12"
+      />
+      <h1 class="text-3xl text-secondary font-bold">Dinoware</h1>
+    </div>
+    <nav>
+      <li class="flex flex-row items-center gap-5 text-lg">
+        <ul>
+          <a class="text-white hover:text-secondary" href="/nosotros">Inicio</a>
+        </ul>
+        <ul>
+          <a class="text-white hover:text-secondary" href="/servicios">
+            Servicios
+          </a>
+        </ul>
+        <ul>
+          <a class="text-white hover:text-secondary" href="/precios">
+            Proyectos
+          </a>
+        </ul>
+        <ul>
+          <a class="text-white hover:text-secondary" href="/contacto">
+            Tecnologias
+          </a>
+        </ul>
+        <ul>
+          <a class="text-white hover:text-secondary" href="/contacto">
+            Nosotros
+          </a>
+        </ul>
+        <ul>
+          <a class="text-white hover:text-secondary" href="/contacto">
+            Contactanos
+          </a>
+        </ul>
+        <ul class="pl-10">
+          <div class="flex flex-row justify-center items-center gap-2">
+            <Icon name="globe-solid" />
+            <span>ES | EN</span>
+          </div>
+        </ul>
+      </li>
+    </nav>
+  </div>
+</header>
