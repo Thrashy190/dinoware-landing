@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import logo from "@/assets/dinoware-logo.svg";
+---
+
+<footer class="bg-primary text-white py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <!-- Logo y descripción -->
+    <div class="flex flex-col gap-4">
+      <Image src={logo} alt="Dinoware Logo" class="w-12" />
+      <h2 class="text-xl font-bold text-secondary">Dinoware</h2>
+      <p class="text-sm text-white/70">
+        Building the future with reliable and modern tech solutions.
+      </p>
+    </div>
+
+    <!-- Links rápidos -->
+    <div>
+      <h3 class="font-semibold mb-4">Company</h3>
+      <ul class="space-y-2 text-sm text-white/90">
+        <li><a href="/nosotros" class="hover:text-secondary">About Us</a></li>
+        <li><a href="/servicios" class="hover:text-secondary">Services</a></li>
+        <li><a href="/precios" class="hover:text-secondary">Projects</a></li>
+        <li><a href="/contacto" class="hover:text-secondary">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Recursos -->
+    <div>
+      <h3 class="font-semibold mb-4">Resources</h3>
+      <ul class="space-y-2 text-sm text-white/90">
+        <li><a href="#" class="hover:text-secondary">Blog</a></li>
+        <li><a href="#" class="hover:text-secondary">Help Center</a></li>
+        <li><a href="#" class="hover:text-secondary">Terms of Service</a></li>
+        <li><a href="#" class="hover:text-secondary">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-semibold mb-4">Follow Us</h3>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-secondary">
+          <Icon name="facebook-brands" class="w-6 h-6" />
+        </a>
+        <a href="#" class="hover:text-secondary">
+          <Icon name="linkedin-brands" class="w-6 h-6" />
+        </a>
+        <a href="#" class="hover:text-secondary">
+          <Icon name="x-twitter-brands" class="w-6 h-6" />
+        </a>
+        <a href="#" class="hover:text-secondary">
+          <Icon name="instagram-brands" class="w-6 h-6" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-12 text-center text-xs text-white/50">
+    © {new Date().getFullYear()} Dinoware. All rights reserved.
+  </div>
+</footer>
