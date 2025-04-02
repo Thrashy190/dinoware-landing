@@ -1,5 +1,7 @@
 ---
 import Header from "@/components/Header.astro";
+import Footer from "@/sections/Footer.astro";
+import Contact from "@/sections/Contact.astro";
 ---
 
 <!doctype html>
@@ -14,6 +16,8 @@ import Header from "@/components/Header.astro";
   <body class="bg-primary">
     <Header />
     <slot />
+    <Contact />
+    <Footer />
   </body>
 </html>
 
