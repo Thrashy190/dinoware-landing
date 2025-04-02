@@ -12,6 +12,7 @@ import { Image } from "astro:assets";
     alt="Stripes superior rotado"
     class="absolute top-0 left-0 w-[800px] rotate-180 pointer-events-none z-0 opacity-10"
   />
+
   <div class="relative flex items-center justify-end px-6 md:px-24 py-16">
     <div
       class="absolute inset-0 flex justify-center items-center md:hidden pointer-events-none z-0"
@@ -35,11 +36,12 @@ import { Image } from "astro:assets";
   </div>
 
   <div class="relative hidden md:flex items-center justify-center">
-    <Image
-      src={stripes}
-      alt="Stripes inferior"
-      class="absolute bottom-0 right-0 w-[800px] pointer-events-none z-0 opacity-10"
-    />
-    <Image src={logo} alt="Logo" class="w-[400px] z-10 pointer-events-none" />
+    <Image src={logo} alt="Logo" class="w-[550px] z-10 pointer-events-none" />
   </div>
+
+  <Image
+    src={stripes}
+    alt="Stripes inferior"
+    class="absolute bottom-0 right-0 w-[800px] pointer-events-none z-0 opacity-10 hidden md:flex"
+  />
 </section>
