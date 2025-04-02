@@ -18,243 +18,255 @@ import logo from "@/assets/dinoware-logo.svg";
     alt="Stripes superior rotado"
     class="absolute bottom-0 right-0 w-[800px] pointer-events-none z-0 opacity-30"
   />
-  <h2
-    class="absolute top-20 text-white text-2xl lg:text-4xl font-medium lg:pb-20 z-10 flex justify-center items-center flex-col"
+
+  <!-- Layout Desktop -->
+  <div
+    class="hidden lg:grid lg:grid-cols-4 lg:items-center lg:justify-center lg:min-h-screen max-w-7xl mx-auto"
   >
-    <span>We Don’t Just Build Software</span><span class="font-bold">
-      We Engineer Evolution
-    </span>
+    <!-- Orbitas (col-span-3) -->
+    <div class="relative col-span-3 flex items-center justify-center">
+      <!-- Centro: Logo -->
+      <div class="absolute z-10">
+        <Image src={logo} alt="Logo" class="w-80 h-80" />
+      </div>
+
+      <!-- Orbita 1 -->
+      <div
+        class="absolute w-[30rem] h-[30rem] border-2 border-secondary rounded-full animate-spin-slow"
+      >
+        <img
+          src="https://skillicons.dev/icons?i=js"
+          class="orbit-icon"
+          style="transform: translate(-50%, -17rem) rotate(0deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=typescript"
+          class="orbit-icon"
+          style="transform: translate(10rem, -11rem) rotate(55deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=python"
+          class="orbit-icon"
+          style="transform: translate(13rem, 0) rotate(90deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=elixir"
+          class="orbit-icon"
+          style="transform: translate(9rem, 9rem) rotate(135deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=java"
+          class="orbit-icon"
+          style="transform: translate(0, 13rem) rotate(180deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=rust"
+          class="orbit-icon"
+          style="transform: translate(-11rem, 10rem) rotate(225deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=go"
+          class="orbit-icon"
+          style="transform: translate(-16rem, 0) rotate(270deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=cs"
+          class="orbit-icon"
+          style="transform: translate(-12rem, -12rem) rotate(315deg)"
+        />
+      </div>
+
+      <!-- Orbita 2 -->
+      <div
+        class="absolute w-[40rem] h-[40rem] border-2 border-secondary rounded-full animate-spin-reverse-slower"
+      >
+        <img
+          src="https://skillicons.dev/icons?i=react"
+          class="orbit-icon"
+          style="transform: translate(-21.5rem, 0) rotate(0deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=nuxtjs"
+          class="orbit-icon"
+          style="transform: translate(-10rem, -20rem) rotate(335deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=nextjs"
+          class="orbit-icon"
+          style="transform: translate(-16.5rem, -15rem) rotate(315deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=astro"
+          class="orbit-icon"
+          style="transform: translate(-2rem, -22rem) rotate(0deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=tailwind"
+          class="orbit-icon"
+          style="transform: translate(14rem, -14rem) rotate(235deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=spring"
+          class="orbit-icon"
+          style="transform: translate(7rem, -20rem) rotate(30deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=nestjs"
+          class="orbit-icon"
+          style="transform: translate(18rem, 0) rotate(90deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=vue"
+          class="orbit-icon"
+          style="transform: translate(12rem, 13rem) rotate(140deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=tauri"
+          class="orbit-icon"
+          style="transform: translate(6.5rem, 16.5rem) rotate(250deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=vite"
+          class="orbit-icon"
+          style="transform: translate(0, 18rem) rotate(180deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=flutter"
+          class="orbit-icon"
+          style="transform: translate(-7.5rem, 17.5rem) rotate(200deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=django"
+          class="orbit-icon"
+          style="transform: translate(-14rem, 14rem) rotate(220deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=dotnet"
+          class="orbit-icon"
+          style="transform: translate(-21rem, -8rem) rotate(290deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=fastapi"
+          class="orbit-icon"
+          style="transform: translate(-19rem, 8rem) rotate(240deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=nodejs"
+          class="orbit-icon"
+          style="transform: translate(17rem, -7rem) rotate(70deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=express"
+          class="orbit-icon"
+          style="transform: translate(16rem, 7rem) rotate(120deg)"
+        />
+      </div>
+
+      <!-- Orbita 3 -->
+      <div
+        class="absolute w-[50rem] h-[50rem] border-2 border-secondary rounded-full animate-spin-slower"
+      >
+        <img
+          src="https://skillicons.dev/icons?i=aws"
+          class="orbit-icon"
+          style="transform: translate(-27rem, 0) rotate(270deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=cloudflare"
+          class="orbit-icon"
+          style="transform: translate(-25rem, -10.5rem) rotate(300deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=terraform"
+          class="orbit-icon"
+          style="transform: translate(-20rem, -18.5rem) rotate(310deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=gcp"
+          class="orbit-icon"
+          style="transform: translate(-12rem, -25rem) rotate(335deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=docker"
+          class="orbit-icon"
+          style="transform: translate(-2rem, -27rem) rotate(0deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=githubactions"
+          class="orbit-icon"
+          style="transform: translate(10rem, -24rem) rotate(30deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=kubernetes"
+          class="orbit-icon"
+          style="transform: translate(18rem, -17rem) rotate(55deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=jenkins"
+          class="orbit-icon"
+          style="transform: translate(22rem, -9rem) rotate(70deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=kafka"
+          class="orbit-icon"
+          style="transform: translate(23rem, 0) rotate(90deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=mongodb"
+          class="orbit-icon"
+          style="transform: translate(21rem, 9rem) rotate(120deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=postgres"
+          class="orbit-icon"
+          style="transform: translate(15rem, 17rem) rotate(140deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=redis"
+          class="orbit-icon"
+          style="transform: translate(8rem, 21rem) rotate(160deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=azure"
+          class="orbit-icon"
+          style="transform: translate(0, 23rem) rotate(180deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=tensorflow"
+          class="orbit-icon"
+          style="transform: translate(-9rem, 22rem) rotate(200deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=vercel"
+          class="orbit-icon"
+          style="transform: translate(-17rem, 18rem) rotate(220deg)"
+        />
+        <img
+          src="https://skillicons.dev/icons?i=firebase"
+          class="orbit-icon"
+          style="transform: translate(-24rem, 10rem) rotate(245deg)"
+        />
+      </div>
+    </div>
+
+    <!-- Título (col-span-1) -->
+    <div class="flex flex-col items-center justify-center text-center">
+      <h2 class="text-white text-2xl lg:text-3xl font-normal mb-4">
+        We Don’t Just Build Software
+      </h2>
+      <h3 class="font-bold text-secondary text-2xl lg:text-4xl">
+        We Engineer Evolution
+      </h3>
+    </div>
+  </div>
+
+  <!-- Mobile Section -->
+  <h2
+    class="lg:hidden absolute top-20 text-white text-2xl font-normal lg:pb-20 z-10 flex justify-center items-center flex-col"
+  >
+    <span>We Don’t Just Build Software</span>
+    <span class="font-bold text-secondary"> We Engineer Evolution </span>
   </h2>
-
-  <!-- Centro: Logo -->
-  <div class="hidden lg:block absolute z-10">
-    <Image src={logo} alt="Logo" class="w-80 h-80" />
-  </div>
-
-  <!-- Orbitas (solo visibles en desktop) -->
-  <div class="hidden lg:flex items-center justify-center">
-    <!-- Orbita 1 -->
-    <div
-      class="absolute w-[30rem] h-[30rem] border-2 border-secondary rounded-full animate-spin-slow"
-    >
-      <img
-        src="https://skillicons.dev/icons?i=js"
-        class="orbit-icon"
-        style="transform: translate(-50%, -17rem) rotate(0deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=typescript"
-        class="orbit-icon"
-        style="transform: translate(10rem, -11rem) rotate(55deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=python"
-        class="orbit-icon"
-        style="transform: translate(13rem, 0) rotate(90deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=elixir"
-        class="orbit-icon"
-        style="transform: translate(9rem, 9rem) rotate(135deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=java"
-        class="orbit-icon"
-        style="transform: translate(0, 13rem) rotate(180deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=rust"
-        class="orbit-icon"
-        style="transform: translate(-11rem, 10rem) rotate(225deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=go"
-        class="orbit-icon"
-        style="transform: translate(-16rem, 0) rotate(270deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=cs"
-        class="orbit-icon"
-        style="transform: translate(-12rem, -12rem) rotate(315deg)"
-      />
-    </div>
-
-    <!-- Orbita 2 -->
-    <div
-      class="absolute w-[40rem] h-[40rem] border-2 border-secondary rounded-full animate-spin-reverse-slower"
-    >
-      <img
-        src="https://skillicons.dev/icons?i=react"
-        class="orbit-icon"
-        style="transform: translate(-21.5rem, 0) rotate(0deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=nuxtjs"
-        class="orbit-icon"
-        style="transform: translate(-10rem, -20rem) rotate(335deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=nextjs"
-        class="orbit-icon"
-        style="transform: translate(-16.5rem, -15rem) rotate(315deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=astro"
-        class="orbit-icon"
-        style="transform: translate(-2rem, -22rem) rotate(0deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=tailwind"
-        class="orbit-icon"
-        style="transform: translate(14rem, -14rem) rotate(235deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=spring"
-        class="orbit-icon"
-        style="transform: translate(7rem, -20rem) rotate(30deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=nestjs"
-        class="orbit-icon"
-        style="transform: translate(18rem, 0) rotate(90deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=vue"
-        class="orbit-icon"
-        style="transform: translate(12rem, 13rem) rotate(140deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=tauri"
-        class="orbit-icon"
-        style="transform: translate(6.5rem, 16.5rem) rotate(250deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=vite"
-        class="orbit-icon"
-        style="transform: translate(0, 18rem) rotate(180deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=flutter"
-        class="orbit-icon"
-        style="transform: translate(-7.5rem, 17.5rem) rotate(200deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=django"
-        class="orbit-icon"
-        style="transform: translate(-14rem, 14rem) rotate(220deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=dotnet"
-        class="orbit-icon"
-        style="transform: translate(-21rem, -8rem) rotate(290deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=fastapi"
-        class="orbit-icon"
-        style="transform: translate(-19rem, 8rem) rotate(240deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=nodejs"
-        class="orbit-icon"
-        style="transform: translate(17rem, -7rem) rotate(70deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=express"
-        class="orbit-icon"
-        style="transform: translate(16rem, 7rem) rotate(120deg)"
-      />
-    </div>
-
-    <!-- Orbita 3 -->
-    <div
-      class="absolute w-[50rem] h-[50rem] border-2 border-secondary rounded-full animate-spin-slower"
-    >
-      <img
-        src="https://skillicons.dev/icons?i=aws"
-        class="orbit-icon"
-        style="transform: translate(-27rem, 0) rotate(270deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=cloudflare"
-        class="orbit-icon"
-        style="transform: translate(-25rem, -10.5rem) rotate(300deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=terraform"
-        class="orbit-icon"
-        style="transform: translate(-20rem, -18.5rem) rotate(310deg)"
-      />
-
-      <img
-        src="https://skillicons.dev/icons?i=gcp"
-        class="orbit-icon"
-        style="transform: translate(-12rem, -25rem) rotate(335deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=docker"
-        class="orbit-icon"
-        style="transform: translate(-2rem, -27rem) rotate(0deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=githubactions"
-        class="orbit-icon"
-        style="transform: translate(10rem, -24rem) rotate(30deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=kubernetes"
-        class="orbit-icon"
-        style="transform: translate(18rem, -17rem) rotate(55deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=jenkins"
-        class="orbit-icon"
-        style="transform: translate(22rem, -9rem) rotate(70deg)"
-      />
-
-      <img
-        src="https://skillicons.dev/icons?i=kafka"
-        class="orbit-icon"
-        style="transform: translate(23rem, 0) rotate(90deg)"
-      />
-
-      <img
-        src="https://skillicons.dev/icons?i=mongodb"
-        class="orbit-icon"
-        style="transform: translate(21rem, 9rem) rotate(120deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=postgres"
-        class="orbit-icon"
-        style="transform: translate(15rem, 17rem) rotate(140deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=redis"
-        class="orbit-icon"
-        style="transform: translate(8rem, 21rem) rotate(160deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=azure"
-        class="orbit-icon"
-        style="transform: translate(0, 23rem) rotate(180deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=tensorflow"
-        class="orbit-icon"
-        style="transform: translate(-9rem, 22rem) rotate(200deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=vercel"
-        class="orbit-icon"
-        style="transform: translate(-17rem, 18rem) rotate(220deg)"
-      />
-      <img
-        src="https://skillicons.dev/icons?i=firebase"
-        class="orbit-icon"
-        style="transform: translate(-24rem, 10rem) rotate(245deg)"
-      />
-    </div>
-  </div>
-
   <!-- Vista Mobile: lista por categorías -->
   <div class="block lg:hidden text-white px-6 mt-50 space-y-10 pb-10">
     <div class="bg-white/5 rounded-xl p-6 shadow-md border border-white/10">

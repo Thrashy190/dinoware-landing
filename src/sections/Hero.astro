@@ -21,7 +21,9 @@ import { Image } from "astro:assets";
     </div>
 
     <div class="max-w-xl flex flex-col items-end gap-10 text-right z-10">
-      <h1 class="text-white text-4xl md:text-5xl leading-tight relative">
+      <h1
+        class="text-white text-3xl lg:text-4xl xl:text-5xl leading-tight relative"
+      >
         <span class="font-bold">Together,</span><br />
         <span>We Build Tomorrow’s Tech</span>
       </h1>
@@ -36,7 +38,11 @@ import { Image } from "astro:assets";
   </div>
 
   <div class="relative hidden md:flex items-center justify-center">
-    <Image src={logo} alt="Logo" class="w-[550px] z-10 pointer-events-none" />
+    <Image
+      src={logo}
+      alt="Logo"
+      class="w-[300px] lg:w-[350px] xl:w-[500px] z-10 pointer-events-none"
+    />
   </div>
 
   <Image
