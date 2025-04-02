@@ -1,5 +1,6 @@
 ---
-const { name, description, imageUrl } = Astro.props;
+import { Icon } from "astro-icon/components";
+const { name, description, imageUrl, icon } = Astro.props;
 ---
 
 <div class="group h-80 w-80 xl:h-96 xl:w-96 [perspective:1000px]">
@@ -24,12 +25,14 @@ const { name, description, imageUrl } = Astro.props;
     >
       <div class="flex min-h-full flex-col items-center justify-between">
         <div>
+          <Icon name={icon} class="w-15 h-15 text-secondary my-4" />
+        </div>
+        <div>
           <h2 class="text-xl font-bold mb-4">{name}</h2>
-          <p class="text-base text-pretty mb-6 leading-relaxed">
+          <p class="text-base text-pretty mb-4 leading-relaxed">
             {description}
           </p>
         </div>
-
         <a
           href="#"
           class="inline-block bg-secondary hover:brightness-140 text-black font-medium py-2 px-5 rounded-full transition-all duration-300"
