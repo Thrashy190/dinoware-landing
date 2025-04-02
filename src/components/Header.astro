@@ -6,25 +6,30 @@ import logo from "@/assets/dinoware-logo.svg";
 
 <header
   id="site-header"
-  class="bg-transparent text-white font-medium py-5 fixed w-full z-50 transition-all duration-300"
+  class="bg-transparent text-white font-medium py-5 fixed w-full z-50 transition-all duration-300 rounded-b-2xl"
 >
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    <!-- Logo -->
     <div class="flex items-center gap-4">
       <Image src={logo} alt="Dinoware Logo" class="w-10" />
       <h1 class="text-2xl md:text-3xl text-secondary font-bold">Dinoware</h1>
     </div>
 
-    <!-- Burger icon (mobile only) -->
     <button
       id="burger-btn"
-      class="md:hidden text-white focus:outline-none"
+      class="md:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1 group"
       aria-label="Toggle menu"
     >
-      <Icon name="bars-solid" class="w-7 h-7" />
+      <span
+        class="block w-8 h-0.5 bg-white transition-all duration-300 origin-center"
+      ></span>
+      <span
+        class="block w-8 h-0.5 bg-white transition-all duration-300 origin-center"
+      ></span>
+      <span
+        class="block w-8 h-0.5 bg-white transition-all duration-300 origin-center"
+      ></span>
     </button>
 
-    <!-- Navegación Desktop -->
     <nav class="hidden md:flex items-center gap-8 text-lg">
       <a class="hover:text-secondary transition" href="/nosotros">Inicio</a>
       <a class="hover:text-secondary transition" href="/servicios">Servicios</a>
@@ -42,17 +47,28 @@ import logo from "@/assets/dinoware-logo.svg";
     </nav>
   </div>
 
-  <!-- Navegación Mobile (toggle via JS) -->
   <nav
     id="mobile-menu"
-    class="hidden md:hidden px-6 pt-4 pb-6 flex-col gap-4 text-lg bg-secondary text-primary shadow-lg rounded-b-xl transition-all duration-300"
+    class="hidden md:hidden mt-6 px-6 pt-4 pb-6 flex-col gap-4 text-lg bg-primary text-secondary transition-all duration-300"
   >
-    <a class="hover:underline transition" href="/nosotros">Inicio</a>
-    <a class="hover:underline transition" href="/servicios">Servicios</a>
-    <a class="hover:underline transition" href="/precios">Proyectos</a>
-    <a class="hover:underline transition" href="/contacto">Tecnologías</a>
-    <a class="hover:underline transition" href="/contacto">Nosotros</a>
-    <a class="hover:underline transition" href="/contacto">Contáctanos</a>
+    <a class="hover:underline transition hover:text-white" href="/nosotros">
+      Inicio
+    </a>
+    <a class="hover:underline transition hover:text-white" href="/servicios">
+      Servicios
+    </a>
+    <a class="hover:underline transition hover:text-white" href="/precios">
+      Proyectos
+    </a>
+    <a class="hover:underline transition hover:text-white" href="/contacto">
+      Tecnologías
+    </a>
+    <a class="hover:underline transition hover:text-white" href="/contacto">
+      Nosotros
+    </a>
+    <a class="hover:underline transition hover:text-white" href="/contacto">
+      Contáctanos
+    </a>
 
     <div class="flex items-center gap-2 pt-4 border-t border-primary/20 mt-2">
       <Icon name="globe-solid" />
@@ -60,14 +76,14 @@ import logo from "@/assets/dinoware-logo.svg";
     </div>
   </nav>
 
-  <!-- Script inline para scroll y toggle -->
   <script is:inline>
     const header = document.getElementById("site-header");
     const burgerBtn = document.getElementById("burger-btn");
     const mobileMenu = document.getElementById("mobile-menu");
+    const spans = burgerBtn.querySelectorAll("span");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 100) {
         header.classList.add("bg-primary", "shadow-md");
         header.classList.remove("bg-transparent");
       } else {
@@ -79,6 +95,17 @@ import logo from "@/assets/dinoware-logo.svg";
     burgerBtn?.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
       mobileMenu.classList.toggle("flex");
+      burgerBtn.classList.toggle("open");
+
+      if (burgerBtn.classList.contains("open")) {
+        spans[0].classList.add("rotate-45", "translate-y-[5.5px]");
+        spans[1].classList.add("opacity-0");
+        spans[2].classList.add("-rotate-45", "-translate-y-[5.5px]");
+      } else {
+        spans[0].classList.remove("rotate-45", "translate-y-[5.5px]");
+        spans[1].classList.remove("opacity-0");
+        spans[2].classList.remove("-rotate-45", "-translate-y-[5.5px]");
+      }
     });
   </script>
 </header>
