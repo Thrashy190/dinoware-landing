@@ -1,4 +1,6 @@
 ---
+import stripes from "@/assets/stripes.svg";
+import { Image } from "astro:assets";
 import ServiceCard from "../components/ServiceCard.astro";
 
 const services = [
@@ -7,42 +9,60 @@ const services = [
     description:
       "We craft tailored software solutions across web, desktop, and enterprise platforms — designed to fit your unique business needs.",
     imageUrl: "/images/web.webp",
+    icon: "computer-solid",
   },
   {
     name: "Movil Apps",
     description:
       "We create seamless mobile experiences for Android and iOS — optimized for performance, usability, and growth.",
     imageUrl: "/images/movil.webp",
+    icon: "mobile-screen-solid",
   },
   {
     name: "Cloud Services",
     description:
       "Leverage secure, scalable cloud infrastructure to deploy, manage, and optimize your digital ecosystem with confidence.",
     imageUrl: "/images/server.webp",
+    icon: "cloud-solid",
   },
   {
     name: "Data Analitycs",
     description:
       "Unlock insights from your data using modern analytics tools — track performance, predict trends, and make smarter decisions.",
     imageUrl: "/images/analitycs.webp",
+    icon: "chart-simple-solid",
   },
   {
     name: "IoT",
     description:
       "Connect and automate smart devices with end-to-end IoT solutions — enabling real-time monitoring, control, and data collection.",
     imageUrl: "/images/iot.webp",
+    icon: "microchip-solid",
   },
   {
     name: "Artificial Intelligence",
     description:
       "Enhance your systems with AI-powered automation, predictive capabilities, and intelligent user experiences.",
     imageUrl: "/images/ai.webp",
+    icon: "brain-solid",
   },
 ];
 ---
 
-<section class="min-h-[1200px] bg-white pt-20 flex flex-col items-center">
-  <h2 class="text-primary text-3xl lg:text-4xl font-bold pb-20">
+<section
+  class="relative min-h-[1200px] bg-white pt-20 flex flex-col items-center"
+>
+  <Image
+    src={stripes}
+    alt="Stripes superior rotado"
+    class="absolute bottom-0 left-0 w-[800px] rotate-90 pointer-events-none z-0 hidden md:flex"
+  />
+  <Image
+    src={stripes}
+    alt="Stripes superior rotado"
+    class="absolute top-0 right-0 w-[800px] rotate-270 pointer-events-none z-0"
+  />
+  <h2 class="text-primary text-2xl lg:text-4xl font-bold pb-20 z-10">
     Where Ideas Become Reality
   </h2>
 
@@ -55,12 +75,13 @@ const services = [
           name={service.name}
           description={service.description}
           imageUrl={service.imageUrl}
+          icon={service.icon}
         />
       ))
     }
   </div>
 
-  <div class="mt-16 mb-16 flex justify-center">
+  <div class="mt-16 mb-16 flex justify-center z-10">
     <a
       href="#services-list"
       class="bg-secondary hover:brightness-150 text-black text-lg font-semibold py-3 px-6 rounded-full transition-all duration-300"
