@@ -4,6 +4,9 @@ import { Image } from "astro:assets";
 import logo from "@/assets/dinoware-logo.svg";
 ---
 
+<!-- Overlay (antes del header para que no tape el botón ni logo) -->
+<div id="overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"></div>
+
 <header
   id="site-header"
   class="bg-transparent text-white font-medium py-5 fixed w-full z-50 transition-all duration-300 rounded-b-2xl"
@@ -16,7 +19,7 @@ import logo from "@/assets/dinoware-logo.svg";
 
     <button
       id="burger-btn"
-      class="md:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1 group"
+      class="md:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1 group z-50"
       aria-label="Toggle menu"
     >
       <span
@@ -30,6 +33,7 @@ import logo from "@/assets/dinoware-logo.svg";
       ></span>
     </button>
 
+    <!-- Navegación Desktop -->
     <nav class="hidden md:flex items-center gap-8 text-lg">
       <a class="hover:text-secondary transition" href="/nosotros">Inicio</a>
       <a class="hover:text-secondary transition" href="/servicios">Servicios</a>
@@ -39,7 +43,6 @@ import logo from "@/assets/dinoware-logo.svg";
       <a class="hover:text-secondary transition" href="/contacto">Nosotros</a>
       <a class="hover:text-secondary transition" href="/contacto">Contáctanos</a
       >
-
       <div class="flex items-center gap-2 pl-4">
         <Icon name="globe-solid" />
         <span>ES | EN</span>
@@ -47,29 +50,29 @@ import logo from "@/assets/dinoware-logo.svg";
     </nav>
   </div>
 
+  <!-- Navegación Mobile -->
   <nav
     id="mobile-menu"
-    class="hidden md:hidden mt-6 px-6 pt-4 pb-6 flex-col gap-4 text-lg bg-primary text-secondary transition-all duration-300"
+    class="hidden md:hidden mt-6 px-6 pt-4 pb-6 flex-col gap-4 text-lg bg-primary text-secondary transition-all duration-300 z-50 relative"
   >
-    <a class="hover:underline transition hover:text-white" href="/nosotros">
-      Inicio
-    </a>
-    <a class="hover:underline transition hover:text-white" href="/servicios">
-      Servicios
-    </a>
-    <a class="hover:underline transition hover:text-white" href="/precios">
-      Proyectos
-    </a>
-    <a class="hover:underline transition hover:text-white" href="/contacto">
-      Tecnologías
-    </a>
-    <a class="hover:underline transition hover:text-white" href="/contacto">
-      Nosotros
-    </a>
-    <a class="hover:underline transition hover:text-white" href="/contacto">
-      Contáctanos
-    </a>
-
+    <a class="hover:underline transition hover:text-white" href="/nosotros"
+      >Inicio</a
+    >
+    <a class="hover:underline transition hover:text-white" href="/servicios"
+      >Servicios</a
+    >
+    <a class="hover:underline transition hover:text-white" href="/precios"
+      >Proyectos</a
+    >
+    <a class="hover:underline transition hover:text-white" href="/contacto"
+      >Tecnologías</a
+    >
+    <a class="hover:underline transition hover:text-white" href="/contacto"
+      >Nosotros</a
+    >
+    <a class="hover:underline transition hover:text-white" href="/contacto"
+      >Contáctanos</a
+    >
     <div class="flex items-center gap-2 pt-4 border-t border-primary/20 mt-2">
       <Icon name="globe-solid" />
       <span>ES | EN</span>
@@ -80,24 +83,40 @@ import logo from "@/assets/dinoware-logo.svg";
     const header = document.getElementById("site-header");
     const burgerBtn = document.getElementById("burger-btn");
     const mobileMenu = document.getElementById("mobile-menu");
+    const overlay = document.getElementById("overlay");
     const spans = burgerBtn.querySelectorAll("span");
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
+    function handleHeaderBackground() {
+      const isDesktop = window.innerWidth >= 768;
+      const isScrolled = window.scrollY > 100;
+
+      if (isDesktop) {
+        if (isScrolled) {
+          header.classList.add("bg-primary", "shadow-md");
+          header.classList.remove("bg-transparent");
+        } else {
+          header.classList.remove("bg-primary", "shadow-md");
+          header.classList.add("bg-transparent");
+        }
+      } else {
+        // En mobile, siempre fondo sólido
         header.classList.add("bg-primary", "shadow-md");
         header.classList.remove("bg-transparent");
-      } else {
-        header.classList.remove("bg-primary", "shadow-md");
-        header.classList.add("bg-transparent");
       }
-    });
+    }
 
-    burgerBtn?.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      mobileMenu.classList.toggle("flex");
-      burgerBtn.classList.toggle("open");
+    // Ejecutar al cargar la página y al hacer scroll
+    document.addEventListener("DOMContentLoaded", handleHeaderBackground);
+    window.addEventListener("scroll", handleHeaderBackground);
+    window.addEventListener("resize", handleHeaderBackground);
 
-      if (burgerBtn.classList.contains("open")) {
+    const toggleMenu = () => {
+      const isOpen = burgerBtn.classList.toggle("open");
+      mobileMenu.classList.toggle("hidden", !isOpen);
+      mobileMenu.classList.toggle("flex", isOpen);
+      overlay.classList.toggle("hidden", !isOpen);
+
+      if (isOpen) {
         spans[0].classList.add("rotate-45", "translate-y-[5.5px]");
         spans[1].classList.add("opacity-0");
         spans[2].classList.add("-rotate-45", "-translate-y-[5.5px]");
@@ -106,6 +125,9 @@ import logo from "@/assets/dinoware-logo.svg";
         spans[1].classList.remove("opacity-0");
         spans[2].classList.remove("-rotate-45", "-translate-y-[5.5px]");
       }
-    });
+    };
+
+    burgerBtn?.addEventListener("click", toggleMenu);
+    overlay?.addEventListener("click", toggleMenu);
   </script>
 </header>
