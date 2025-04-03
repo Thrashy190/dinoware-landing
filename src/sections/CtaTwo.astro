@@ -1,0 +1,146 @@
+<section
+  class="relative min-h-[500px] w-full py-28 px-6 bg-secondary text-white overflow-hidden"
+>
+  <div
+    class="max-w-5xl mx-auto flex flex-col items-center text-center relative z-10"
+  >
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+      Evolve with Dinoware
+    </h2>
+    <p class="text-lg md:text-xl mb-12 max-w-2xl">
+      Join the tech revolution that blends Jurassic power with modern precision.
+      We create more than just software!
+    </p>
+
+    <!-- Animated Button -->
+    <button
+      class="group relative bg-white text-primary font-bold py-4 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 heartbeat flex items-center gap-3"
+    >
+      <span class="z-10">Start your project!</span>
+      <!-- Fixed lightning icon -->
+      <svg
+        class="w-6 h-6 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Burbuja decorativa animada -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    <!-- Burbuja 1 -->
+    <svg
+      class="absolute top-[5%] left-[10%] w-44 h-44 opacity-10 animate-float-slow"
+      viewBox="0 0 200 200"
+    >
+      <circle cx="100" cy="100" r="70" fill="white"></circle>
+    </svg>
+
+    <!-- Burbuja 2 -->
+    <svg
+      class="absolute top-[25%] right-[5%] w-40 h-40 opacity-10 animate-float-medium"
+      viewBox="0 0 200 200"
+    >
+      <circle cx="100" cy="100" r="100" fill="white"></circle>
+    </svg>
+
+    <!-- Burbuja 3 -->
+    <svg
+      class="absolute bottom-[15%] left-[15%] w-60 h-60 opacity-10 animate-float-fast"
+      viewBox="0 0 200 200"
+    >
+      <circle cx="100" cy="100" r="100" fill="white"></circle>
+    </svg>
+
+    <!-- Burbuja 4 -->
+    <svg
+      class="absolute bottom-[10%] right-[10%] w-24 h-24 opacity-10 animate-float-medium"
+      viewBox="0 0 200 200"
+    >
+      <circle cx="100" cy="100" r="60" fill="white"></circle>
+    </svg>
+
+    <!-- Burbuja 5 -->
+    <svg
+      class="absolute top-[40%] left-[45%] w-20 h-20 opacity-10 animate-float-slow"
+      viewBox="0 0 200 200"
+    >
+      <circle cx="100" cy="100" r="60" fill="white"></circle>
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes float-slow {
+    0% {
+      transform: translateY(0px) translateX(0px);
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+  }
+
+  @keyframes float-medium {
+    0% {
+      transform: translateY(0px) translateX(0px);
+    }
+    50% {
+      transform: translateY(-30px) translateX(-15px);
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+  }
+
+  @keyframes float-fast {
+    0% {
+      transform: translateY(0px) translateX(0px);
+    }
+    50% {
+      transform: translateY(-40px) translateX(20px);
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float-slow 10s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: float-medium 8s ease-in-out infinite;
+  }
+
+  .animate-float-fast {
+    animation: float-fast 6s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    14% {
+      transform: scale(1.1);
+    }
+    28% {
+      transform: scale(1);
+    }
+    42% {
+      transform: scale(1.1);
+    }
+    70% {
+      transform: scale(1);
+    }
+  }
+
+  .hover\\:animate-heartbeat:hover {
+    animation: heartbeat 1.5s ease-in-out;
+  }
+</style>
