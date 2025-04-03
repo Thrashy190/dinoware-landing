@@ -1,0 +1,169 @@
+---
+import { Image } from "astro:assets";
+import logo from "@/assets/dinoware-logo.svg";
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqItems: FAQItem[] = [
+  {
+    question: "What services does Dinoware offer?",
+    answer:
+      "At Dinoware, we design and build tailor-made digital solutions: from web and mobile apps to cloud platforms, AI-powered systems, and IoT integrations. Whatever your challenge, we create the right technology to solve it — fast, scalable, and future-ready.",
+  },
+  {
+    question: "What technologies do you use?",
+    answer:
+      "We leverage cutting-edge technologies like React, Node.js, Astro, AWS, Docker, and Python to deliver performance, reliability, and innovation in every line of code. Our stack evolves with your business needs.",
+  },
+  {
+    question: "Why choose Dinoware over other agencies?",
+    answer:
+      "We don't just develop software — we become your technology partner. With a focus on transparency, agility, and world-class design, we align with your goals to bring high-impact digital experiences to life. Think of us as your extended tech team.",
+  },
+  {
+    question: "What are the benefits of hiring Dinoware?",
+    answer:
+      "You gain a strategic ally committed to your success. We accelerate your development timelines, reduce complexity through modern tools, and guide your business through every step of its digital evolution — always with clarity, quality, and measurable results.",
+  },
+];
+---
+
+<section class="relative w-full min-h-[900px] bg-primary py-24 px-4 text-white">
+  <div
+    class="max-w-5xl h-full mx-auto flex justify-center items-center flex-col z-10"
+  >
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+      Preguntas Frecuentes
+    </h2>
+
+    <div class="space-y-4">
+      {
+        faqItems.map((item, index) => (
+          <div class="faq-item border border-white/20 rounded-lg overflow-hidden">
+            <button
+              class="faq-button w-full flex justify-between items-center p-5 bg-white/10 hover:bg-white/20 transition-colors duration-200"
+              aria-expanded="false"
+              aria-controls={`faq-answer-${index}`}
+            >
+              <span class="text-left text-xl md:text-2xl font-bold text-white">
+                {item.question}
+              </span>
+              <svg
+                class="w-6 h-6 text-white transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            <div
+              id={`faq-answer-${index}`}
+              class="faq-answer overflow-hidden max-h-0 transition-all duration-500"
+            >
+              <div class="p-5 bg-white/5 text-white/90 font-semibold text-lg md:text-xl leading-relaxed">
+                {item.answer}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <Image
+    src={logo}
+    alt="Logo"
+    class="absolute bottom-0 left-0 w-[300px] lg:w-[350px] xl:w-[500px] z-10 pointer-events-none opacity-30"
+  />
+</section>
+
+<script>
+  interface FAQElement {
+    button: HTMLButtonElement;
+    answer: HTMLElement;
+    icon: SVGElement;
+  }
+
+  class FAQController {
+    private items: FAQElement[];
+
+    constructor() {
+      this.items = this.initializeItems();
+      this.setupEventListeners();
+    }
+
+    private initializeItems(): FAQElement[] {
+      const faqItems = document.querySelectorAll(".faq-item");
+      return Array.from(faqItems).map((item) => {
+        const button = item.querySelector(".faq-button") as HTMLButtonElement;
+        const answer = item.querySelector(".faq-answer") as HTMLElement;
+        const icon = button.querySelector("svg") as SVGElement;
+
+        if (!button || !answer || !icon) {
+          throw new Error("Required FAQ elements not found");
+        }
+
+        return { button, answer, icon };
+      });
+    }
+
+    private setupEventListeners(): void {
+      this.items.forEach((item, index) => {
+        item.button.addEventListener("click", () => this.toggleItem(index));
+      });
+    }
+
+    private toggleItem(index: number): void {
+      const currentItem = this.items[index];
+      const isExpanded =
+        currentItem.button.getAttribute("aria-expanded") === "true";
+
+      // Cerrar todos los items excepto el actual
+      this.items.forEach((item, i) => {
+        if (i !== index) {
+          this.closeItem(item);
+        }
+      });
+
+      // Alternar el estado del item actual
+      if (!isExpanded) {
+        this.openItem(currentItem);
+      } else {
+        this.closeItem(currentItem);
+      }
+    }
+
+    private openItem(item: FAQElement): void {
+      item.button.setAttribute("aria-expanded", "true");
+      item.answer.style.maxHeight = `${item.answer.scrollHeight}px`;
+      item.icon.style.transform = "rotate(180deg)";
+    }
+
+    private closeItem(item: FAQElement): void {
+      item.button.setAttribute("aria-expanded", "false");
+      item.answer.style.maxHeight = "0";
+      item.icon.style.transform = "rotate(0deg)";
+    }
+  }
+
+  const initFAQ = (): void => {
+    try {
+      new FAQController();
+    } catch (error) {
+      console.error("Error initializing FAQ:", error);
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", initFAQ);
+  if (document.readyState === "complete") initFAQ();
+</script>
