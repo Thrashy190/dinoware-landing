@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 ---
 
 <section
-  class="relative min-h-[700px] grid grid-cols-1 md:grid-cols-2 bg-primary overflow-hidden"
+  class="relative min-h-[700px] flex justify-center items-center bg-primary overflow-hidden"
 >
   <Image
     src={stripes}
@@ -20,11 +20,13 @@ import { Image } from "astro:assets";
       <Image src={logo} alt="Logo de fondo" class="w-[500px] opacity-20" />
     </div>
 
-    <div class="max-w-xl flex flex-col items-end gap-10 text-right z-10">
+    <div
+      class="max-w-xl flex flex-col justify-center items-center gap-10 text-right z-10"
+    >
       <h1
-        class="text-white text-3xl lg:text-4xl xl:text-5xl leading-tight relative"
+        class="text-white text-3xl lg:text-4xl xl:text-5xl flex flex-col justify-center items-center"
       >
-        <span class="font-bold">Together,</span><br />
+        <span class="font-extrabold pb-8 text-secondary">Together,</span>
         <span>We Build Tomorrow’s Tech</span>
       </h1>
 
@@ -37,13 +39,13 @@ import { Image } from "astro:assets";
     </div>
   </div>
 
-  <div class="relative hidden md:flex items-center justify-center">
+  <!-- <div class="relative hidden md:flex items-center justify-center">
     <Image
       src={logo}
       alt="Logo"
       class="w-[300px] lg:w-[350px] xl:w-[500px] z-10 pointer-events-none"
     />
-  </div>
+  </div> -->
 
   <Image
     src={stripes}
