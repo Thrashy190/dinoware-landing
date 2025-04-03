@@ -30,12 +30,21 @@ import { Image } from "astro:assets";
         <span>We Build Tomorrow’s Tech</span>
       </h1>
 
-      <a
-        href="#contact"
-        class="bg-secondary p-4 px-10 rounded-full text-primary font-medium text-xl hover:brightness-110 transition-all"
+      <button
+        class="group relative bg-white text-primary font-bold py-4 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 heartbeat flex items-center gap-3"
       >
-        Contactanos
-      </a>
+        <span class="z-10">
+          Transform Your Future, Start Creating Tech Here!!</span
+        >
+        <!-- Fixed lightning icon -->
+        <svg
+          class="w-6 h-6 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+        </svg>
+      </button>
     </div>
   </div>
 
