@@ -1,0 +1,171 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  class="w-full bg-primary text-white px-6 py-24 relative overflow-hidden"
+>
+  <!-- Floating decorative bubbles -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    <svg
+      class="absolute left-20 top-10 w-64 h-64 opacity-10 animate-float-slow"
+      viewBox="0 0 200 200"
+    >
+      <circle cx="100" cy="100" r="80" fill="white"></circle>
+    </svg>
+    <svg
+      class="absolute right-10 top-1/4 w-48 h-48 opacity-10 animate-float-medium"
+      viewBox="0 0 200 200"
+    >
+      <circle cx="100" cy="100" r="70" fill="white"></circle>
+    </svg>
+    <svg
+      class="absolute left-10 bottom-10 w-56 h-56 opacity-10 animate-float-fast"
+      viewBox="0 0 200 200"
+    >
+      <circle cx="100" cy="100" r="60" fill="white"></circle>
+    </svg>
+    <svg
+      class="absolute right-20 bottom-1/4 w-40 h-40 opacity-10 animate-float-medium"
+      viewBox="0 0 200 200"
+    >
+      <circle cx="100" cy="100" r="50" fill="white"></circle>
+    </svg>
+  </div>
+
+  <!-- Title -->
+  <div class="max-w-5xl mx-auto text-center mb-20 relative z-10">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">About Us</h1>
+    <p class="text-lg md:text-xl text-white/80">
+      Discover the essence of Dinoware: a fusion of Jurassic strength and
+      cutting-edge technology.
+    </p>
+  </div>
+
+  <!-- Who We Are -->
+  <div class="max-w-6xl mx-auto grid-cols-2 gap-10 mb-20 relative z-10">
+    <div
+      class="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center text-center"
+    >
+      <div class="text-primary bg-white rounded-full p-4 shadow-lg mb-6">
+        <Icon name="people-group-solid" class="w-20 h-20" />
+      </div>
+      <h2 class="text-3xl font-bold mb-4">Who We Are</h2>
+      <p class="text-lg text-white/90">
+        At Dinoware, we merge the spirit of innovation with the strength of the
+        Jurassic era. We are a team of tech strategists, designers, and
+        engineers committed to building digital solutions that transform
+        businesses into evolutionary leaders.
+      </p>
+    </div>
+  </div>
+
+  <!-- Mission and Vision -->
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 mb-20 relative z-10">
+    <div
+      class="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center text-center"
+    >
+      <div class="text-primary bg-white rounded-full p-4 shadow-lg mb-6">
+        <Icon name="bullseye-solid" class="w-16 h-16" />
+      </div>
+      <h3 class="text-2xl font-bold mb-2">Our Mission</h3>
+      <p class="text-white/90">
+        Drive digital evolution by creating innovative, efficient, and
+        human-centered software that addresses real-world challenges and
+        empowers organizations to thrive in a fast-paced world.
+      </p>
+    </div>
+    <div
+      class="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center text-center"
+    >
+      <div class="text-primary bg-white rounded-full p-4 shadow-lg mb-6">
+        <Icon name="eye-solid" class="w-16 h-16" />
+      </div>
+      <h3 class="text-2xl font-bold mb-2">Our Vision</h3>
+      <p class="text-white/90">
+        To become pioneers in tech innovation by delivering meaningful digital
+        solutions that not only solve problems but inspire the next era of
+        transformation.
+      </p>
+    </div>
+  </div>
+
+  <!-- Objectives -->
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 mb-20 relative z-10">
+    <div class="bg-white/10 rounded-xl p-8 shadow-lg text-white/90 text-lg">
+      <h2 class="text-3xl font-bold text-center mb-6">Our Objectives</h2>
+      <ul class="list-disc space-y-3 pl-6">
+        <li>
+          Build scalable, sustainable, and user-focused digital experiences.
+        </li>
+        <li>Reduce development time without compromising quality.</li>
+        <li>Leverage modern, innovative tools as part of our tech stack.</li>
+        <li>
+          Establish long-lasting, trust-based relationships with each client.
+        </li>
+      </ul>
+    </div>
+    <div
+      class="bg-white/10 rounded-xl p-8 shadow-lg flex flex-col items-center text-center justify-center"
+    >
+      <Icon name="rocket-solid" class="w-16 h-16 text-white/80 mb-4" />
+      <p class="text-xl text-white/80">
+        We’re not just building software — we’re engineering evolution.
+      </p>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="text-center relative z-10">
+    <a
+      href="/#contact"
+      class="inline-block bg-white text-primary font-bold py-4 px-10 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+      ><span class="z-10"> Let’s bring your digital vision to life! </span>
+    </a>
+  </div>
+</section>
+
+<style>
+  @keyframes float-slow {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+  @keyframes float-medium {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-30px) translateX(-15px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+  @keyframes float-fast {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-40px) translateX(20px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+  .animate-float-slow {
+    animation: float-slow 12s ease-in-out infinite;
+  }
+  .animate-float-medium {
+    animation: float-medium 9s ease-in-out infinite;
+  }
+  .animate-float-fast {
+    animation: float-fast 6s ease-in-out infinite;
+  }
+</style>
