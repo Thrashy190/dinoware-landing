@@ -1,16 +1,15 @@
----
-import stripes from "@/assets/stripes.svg";
-import { Image } from "astro:assets";
----
-
-<section id="contact" class="relative py-20 bg-white">
+<section id="contact" class="relative py-20 bg-white" id="contact">
   <div class="max-w-3xl mx-auto px-6 text-center">
     <h2 class="text-4xl font-bold text-primary mb-4">Contact Us</h2>
     <p class="text-gray-600 mb-10">
       Have a question, idea, or project in mind? We’d love to hear from you.
     </p>
 
-    <form class="grid grid-cols-1 gap-6 text-left">
+    <form
+      class="grid grid-cols-1 gap-6 text-left"
+      action="https://formsubmit.co/diego456.dlm77@gmail.com"
+      method="POST"
+    >
       <div>
         <label for="name" class="block mb-1 font-medium text-gray-700">
           Name
@@ -36,6 +35,19 @@ import { Image } from "astro:assets";
           required
         />
       </div>
+      <div>
+        <label for="email" class="block mb-1 font-medium text-gray-700">
+          Phone number
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          maxlength="10"
+          class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary"
+          required
+        />
+      </div>
 
       <div>
         <label for="message" class="block mb-1 font-medium text-gray-700">
@@ -51,7 +63,7 @@ import { Image } from "astro:assets";
 
       <button
         type="submit"
-        class="bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary transition"
+        class="bg-primary text-white font-semibold py-3 px-6 rounded-full hover:bg-secondary transition"
       >
         Send Message
       </button>
