@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 
 <section
   class="relative min-h-[700px] flex justify-center items-center bg-primary overflow-hidden"
+  id="home"
 >
   <Image
     src={stripes}
@@ -27,16 +28,18 @@ import { Image } from "astro:assets";
         class="text-white text-3xl lg:text-4xl xl:text-5xl flex flex-col justify-center items-center"
       >
         <span class="font-extrabold pb-8 text-secondary">Together,</span>
-        <span>We Build Tomorrow’s Tech</span>
+        <span class="text-2xl lg:text-4xl xl:text-5xl"
+          >We Build Tomorrow’s Tech</span
+        >
       </h1>
 
-      <button
+      <a
+        href="/#contact"
         class="group relative bg-white text-primary font-bold py-4 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 heartbeat flex items-center gap-3"
       >
         <span class="z-10">
           Transform Your Future, Start Creating Tech Here!!</span
         >
-        <!-- Fixed lightning icon -->
         <svg
           class="w-6 h-6 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6"
           viewBox="0 0 24 24"
@@ -44,7 +47,7 @@ import { Image } from "astro:assets";
         >
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
         </svg>
-      </button>
+      </a>
     </div>
   </div>
 
